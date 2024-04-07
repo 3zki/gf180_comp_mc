@@ -23,7 +23,7 @@ rdsw - Zero bias LDD resistance per unit width
 ```
 
 モデルを読み込む際はコーナー```statistical```を適用します。
-尚、ダイオードとMOSCAPは対応していません。
+ダイオードとMOSCAPは対応していません。
 ```
 .lib $::180MCU_MODELS/sm141064.ngspice statistical
 .lib $::180MCU_MODELS/sm141064.ngspice bjt_statistical
@@ -45,8 +45,7 @@ rdsw - Zero bias LDD resistance per unit width
 
 ミスマッチではMOSFET、抵抗、BJTの特性が変わります。
 
-MOSFETでは各素子に対して```delvto```がランダムに設定され、Vthが変動します。
-結果、gmやCggといったさまざまなパラメータがVthに影響されて変動します。
+MOSFETでは各素子に対して```delvto```がランダムに設定され、Vthが変動します。また、Vthが変動したことでgmなどのパラメータも併せて変動します。
 
 # ミスマッチ付きモンテカルロシミュレーション
 両方組み合わせてより現実に近いばらつきを考慮してシミュレーションを行う事も可能です。
